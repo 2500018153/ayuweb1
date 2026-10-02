@@ -1,0 +1,323 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --hitam: #121212;
+    --hijau-tua: #14432a;
+    --hijau-terang: #2e7d55;
+    --abu-gelap: #2b2b2b;
+    --abu: #6e6e6e;
+    --abu-muda: #e9e9e9;
+    --putih: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--abu-muda);
+    color: var(--hitam);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+
+
+.header {
+    background-color: var(--hitam);
+    color: var(--putih);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: var(--hijau-terang);
+}
+
+.nav a {
+    color: var(--putih);
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: var(--hijau-terang);
+}
+
+
+
+.hero {
+    background: linear-gradient(135deg, var(--hitam) 0%, var(--hijau-tua) 100%);
+    color: var(--putih);
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.hero h2 {
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 24px;
+    color: var(--abu-muda);
+}
+
+.btn-hero {
+    display: inline-block;
+    background-color: var(--hijau-terang);
+    color: var(--putih);
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-hero:hover {
+    background-color: var(--hijau-tua);
+    transform: translateY(-2px);
+}
+
+.judul-section {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: var(--hitam);
+    position: relative;
+}
+
+.judul-section::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--hijau-terang);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+
+
+.katalog {
+    padding: 60px 0;
+}
+
+.grid-musisi {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.kartu-musisi {
+    background-color: var(--putih);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.kartu-musisi:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.foto-musisi {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 4px solid var(--hijau-terang);
+}
+
+.info-musisi {
+    padding: 18px;
+}
+
+.info-musisi h3 {
+    color: var(--hijau-tua);
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+}
+
+.info-musisi p {
+    font-size: 0.95rem;
+    color: var(--abu-gelap);
+    margin-bottom: 4px;
+}
+
+.jumlah-vote {
+    margin-top: 10px;
+    font-weight: bold;
+    color: var(--hijau-terang) !important;
+}
+
+.voting {
+    background-color: var(--hitam);
+    color: var(--putih);
+    padding: 60px 0;
+}
+
+.voting .judul-section {
+    color: var(--putih);
+}
+
+#form-voting {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--abu-gelap);
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: var(--abu-muda);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--abu);
+    background-color: var(--putih);
+    color: var(--hitam);
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: 2px solid var(--hijau-terang);
+}
+
+/* Style saat input tidak valid*/
+.form-group input.invalid,
+.form-group select.invalid,
+.form-group textarea.invalid {
+    border-color: #d9534f;
+    outline: 2px solid #d9534f;
+}
+
+.error-msg {
+    color: #ff8a80;
+    font-size: 0.85rem;
+    margin-top: 4px;
+    min-height: 18px;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--hijau-terang);
+    color: var(--putih);
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: var(--hijau-tua);
+}
+
+
+.pesan {
+    max-width: 600px;
+    margin: 0 auto 20px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.pesan-sukses {
+    background-color: #1e5631;
+    color: var(--putih);
+}
+
+.pesan-gagal {
+    background-color: #7a1f1f;
+    color: var(--putih);
+}
+
+
+
+.hasil {
+    padding: 50px 0;
+}
+
+.list-hasil {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: var(--putih);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.list-hasil li {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--abu-muda);
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-hasil li:last-child {
+    border-bottom: none;
+}
+
+.list-hasil li strong {
+    color: var(--hijau-tua);
+}
+
+
+.footer {
+    background-color: var(--hitam);
+    color: var(--abu-muda);
+    text-align: center;
+    padding: 24px 0;
+    font-size: 0.9rem;
+}
+
+.footer strong {
+    color: var(--hijau-terang);
+}
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndieSound - Katalog & Voting Musisi Indie Lokal Indonesia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-inner">
+            <h1 class="logo">🎸 IndieSound</h1>
+            <nav class="nav">
+                <a href="#katalog">Katalog Musisi</a>
+                <a href="#voting">Voting</a>
+                <a href="#hasil">Hasil Sementara</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Dukung Musisi Indie Lokal Indonesia</h2>
+            <p>Kenali, dengarkan, dan berikan suaramu untuk musisi indie favoritmu.</p>
+        </div>
+    </section>
+
+    <!-- KATALOG MUSISI (diisi oleh script.js) -->
+    <section class="katalog" id="katalog">
+        <div class="container">
+            <h2 class="judul-section">Katalog Musisi Indie</h2>
+            <div class="grid-musisi" id="grid-musisi"></div>
+        </div>
+    </section>
+
+    <!-- FORM VOTING -->
+    <section class="voting" id="voting">
+        <div class="container">
+            <h2 class="judul-section">Form Voting Musisi Favorit</h2>
+
+            <div id="status-pesan"></div>
+
+            <form id="form-voting" novalidate>
+
+                <div class="form-group">
+                    <label for="nama">Nama Voter</label>
+                    <input type="text" id="nama" name="nama" placeholder="Masukkan nama kamu">
+                    <span class="error-msg" id="error-nama"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" placeholder="contoh@email.com">
+                    <span class="error-msg" id="error-email"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="musisi">Pilihan Musisi</label>
+                    <select id="musisi" name="musisi">
+                        <option value="">-- Pilih Musisi --</option>
+                    </select>
+                    <span class="error-msg" id="error-musisi"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="alasan">Alasan Memilih</label>
+                    <textarea id="alasan" name="alasan" rows="4" placeholder="Ceritakan alasan kamu memilih musisi ini (minimal 15 karakter)"></textarea>
+                    <span class="error-msg" id="error-alasan"></span>
+                </div>
+
+                <button type="submit" class="btn-submit">Kirim Vote</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- HASIL VOTING SEMENTARA -->
+    <section class="hasil" id="hasil">
+        <div class="container">
+            <h2 class="judul-section">Hasil Voting Sementara</h2>
+            <ul class="list-hasil" id="list-hasil"></ul>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="tahun"></span> IndieSound - Praktikum Pemrograman Web</p>
+            <p>Jumlah Pengunjung: <strong id="counter">0</strong> kali</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
